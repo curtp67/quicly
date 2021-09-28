@@ -289,6 +289,15 @@ def render_ack_frame(ranges):
         "acked_ranges": ranges
     }
 
+def handle_ack_frequency_receive(event):
+    return {
+        "frame_type": "ack_frequency",
+        "sequence": event["sequence"],
+        "packet_tolerance": event["packet-tolerance"],
+        "max_ack_delay": event["max-ack-delay"],
+        "ignore_order": event["ignore-order"],
+    }
+
 QLOG_EVENT_HANDLERS = {
     "packet-lost": handle_packet_lost,
     "packet-received": handle_packet_received,
@@ -322,7 +331,8 @@ FRAME_EVENT_HANDLERS = {
     "stream-on-send-stop": handle_stream_on_send_stop,
     "stream-receive": handle_stream_receive,
     "transport-close-receive": handle_transport_close_receive,
-    "transport-close-send": handle_transport_close_send
+    "transport-close-send": handle_transport_close_send,
+    "ack-frequency-receive": handle_ack_frequency_receive,
 }
 
 def usage():
