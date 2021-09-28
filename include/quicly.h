@@ -1203,6 +1203,15 @@ void quicly_stream_noop_on_receive(quicly_stream_t *stream, size_t off, const vo
  */
 void quicly_stream_noop_on_receive_reset(quicly_stream_t *stream, int err);
 
+void set_max_ack_delay (int n);
+int get_max_ack_delay (void);
+void set_first_ack_frequency_packet_num(int n);
+int get_first_ack_frequency_packet_num(void);
+void set_ack_frequency_cwnd_fraction(int n);
+int get_ack_frequency_cwnd_fraction(void);
+void set_max_packet_tolerance(int n);
+int get_max_packet_tolerance(void);
+
 extern const quicly_stream_callbacks_t quicly_stream_noop_callbacks;
 
 /* inline definitions */

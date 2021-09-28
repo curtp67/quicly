@@ -454,6 +454,43 @@ static const quicly_transport_parameters_t default_transport_params = {.max_udp_
                                                                        .active_connection_id_limit =
                                                                            QUICLY_DEFAULT_ACTIVE_CONNECTION_ID_LIMIT};
 
+static int QUICLY_LOCAL_MAX_ACK_DELAY = 25;
+static int QUICLY_FIRST_ACK_FREQUENCY_PACKET_NUMBER = 1000;
+static int QUICLY_ACK_FREQUENCY_CWND_FRACTION = 8;
+static int QUICLY_MAX_PACKET_TOLERANCE = 100;
+
+void set_max_ack_delay (int n) {
+  QUICLY_LOCAL_MAX_ACK_DELAY = n;
+}
+
+int get_max_ack_delay (void) {
+  return QUICLY_LOCAL_MAX_ACK_DELAY;
+}
+
+void set_first_ack_frequency_packet_num(int n) {
+  QUICLY_FIRST_ACK_FREQUENCY_PACKET_NUMBER = n;
+}
+
+int get_first_ack_frequency_packet_num(void) {
+  return QUICLY_FIRST_ACK_FREQUENCY_PACKET_NUMBER;
+}
+
+void set_ack_frequency_cwnd_fraction(int n) {
+  QUICLY_ACK_FREQUENCY_CWND_FRACTION = n;
+}
+
+int get_ack_frequency_cwnd_fraction(void) {
+  return QUICLY_ACK_FREQUENCY_CWND_FRACTION;
+}
+
+void set_max_packet_tolerance(int n) {
+  QUICLY_MAX_PACKET_TOLERANCE = n;
+}
+
+int get_max_packet_tolerance(void) {
+  return QUICLY_MAX_PACKET_TOLERANCE;
+}
+
 static const struct st_ptls_salt_t *get_salt(uint32_t protocol_version)
 {
     static const struct st_ptls_salt_t
