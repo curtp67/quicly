@@ -30,7 +30,6 @@ extern "C" {
 #include <stdint.h>
 #include "picotls.h"
 
-#define QUICLY_DELAYED_ACK_TIMEOUT 25   /* milliseconds */
 #define QUICLY_DEFAULT_MAX_ACK_DELAY 25 /* milliseconds */
 #define QUICLY_DEFAULT_ACK_DELAY_EXPONENT 3
 #define QUICLY_LOCAL_ACK_DELAY_EXPONENT 10

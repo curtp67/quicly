@@ -455,12 +455,14 @@ static const quicly_transport_parameters_t default_transport_params = {.max_udp_
                                                                            QUICLY_DEFAULT_ACTIVE_CONNECTION_ID_LIMIT};
 
 static int QUICLY_LOCAL_MAX_ACK_DELAY = 25;
+static int QUICLY_DELAYED_ACK_TIMEOUT = 25;
 static int QUICLY_FIRST_ACK_FREQUENCY_PACKET_NUMBER = 1000;
 static int QUICLY_ACK_FREQUENCY_CWND_FRACTION = 8;
 static int QUICLY_MAX_PACKET_TOLERANCE = 100;
 
 void set_max_ack_delay (int n) {
   QUICLY_LOCAL_MAX_ACK_DELAY = n;
+  QUICLY_DELAYED_ACK_TIMEOUT = n;
 }
 
 int get_max_ack_delay (void) {
